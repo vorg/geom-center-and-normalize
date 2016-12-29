@@ -17,8 +17,4 @@ function centerAndNormalize (positions) {
   return newPositions
 }
 
-var positions = [[1, 1, 1], [2, 2, 2], [3, 5, 3]]
-var normalizedPositions = centerAndNormalize(positions)
-console.log(normalizedPositions)
-
 module.exports = centerAndNormalize
