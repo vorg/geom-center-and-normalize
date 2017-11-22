@@ -1,6 +1,6 @@
 {
   "name": "geom-center-and-normalize",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Centers the geometry and scales it to fill 1x1x1 bounding box",
   "main": "index.js",
   "license": "MIT",
