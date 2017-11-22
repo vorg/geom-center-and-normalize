@@ -1,4 +1,4 @@
-# geom-center-and-scale
+# geom-center-and-normalize
 
 Centers the geometry and scales it to fill 1x1x1 bounding box
 
