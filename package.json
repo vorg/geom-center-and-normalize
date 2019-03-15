@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "clone": "^1.0.2",
-    "pex-geom": "git://github.com/variablestudio/pex-geom",
-    "pex-math": "git://github.com/variablestudio/pex-math"
+    "pex-geom": "^2.0.2",
+    "pex-math": "^2.1.1"
   },
   "devDependencies": {},
   "scripts": {
