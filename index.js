@@ -2,9 +2,9 @@ var aabb = require('pex-geom/aabb')
 var vec3 = require('pex-math/vec3')
 
 function centerAndNormalize (positions) {
-  var aabb = aabb.fromPoints(positions)
-  var center = aabb.center(aabb)
-  var size = aabb.size(aabb)
+  var result = aabb.fromPoints(positions)
+  var center = aabb.center(result)
+  var size = aabb.size(result)
   var scale = Math.max(size[0], Math.max(size[1], size[2]))
 
   var newPositions = []
