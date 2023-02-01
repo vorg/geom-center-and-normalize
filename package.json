@@ -1,36 +1,41 @@
 {
   "name": "geom-center-and-normalize",
   "version": "1.0.2",
-  "description": "Centers the geometry and scales it to fill 1x1x1 bounding box",
-  "main": "index.js",
-  "license": "MIT",
-  "author": {
-    "name": "Marcin Ignac",
-    "email": "marcin.ignac@gmail.com",
-    "url": "https://github.com/vorg"
-  },
-  "dependencies": {
-    "clone": "^1.0.2",
-    "pex-geom": "^2.0.2",
-    "pex-math": "^2.1.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "node test.js"
-  },
+  "description": "Centers a simplicial complex geometry positions and scale them to fill 1x1x1 bounding box.",
   "keywords": [
     "geom",
+    "center",
+    "normalize",
     "simplicial",
     "complex",
     "3d",
+    "pex",
+    "geometry",
     "webgl"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/vorg/geom-center-and-scale.git"
+  "homepage": "https://github.com/vorg/geom-center-and-normalize",
+  "bugs": "https://github.com/vorg/geom-center-and-normalize/issues",
+  "repository": "vorg/geom-center-and-normalize",
+  "license": "MIT",
+  "author": "Marcin Ignac <marcin.ignac@gmail.com> (https://github.com/vorg)",
+  "contributors": [
+    "Damien Seguin (https://github.com/dmnsgn)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "exports": "./index.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch test",
+    "release": "snowdev release"
   },
-  "homepage": "https://github.com/vorg/geom-center-and-scale",
-  "bugs": {
-    "url": "https://github.com/vorg/geom-center-and-scale/issues"
+  "dependencies": {
+    "pex-geom": "^3.0.0-alpha.3",
+    "pex-math": "^4.0.0-alpha.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }
