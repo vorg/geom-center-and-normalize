@@ -1,20 +1,29 @@
-var aabb = require('pex-geom/aabb')
-var vec3 = require('pex-math/vec3')
+import { avec3, vec3 } from "pex-math";
+import { aabb } from "pex-geom";
 
-function centerAndNormalize (positions) {
-  var result = aabb.fromPoints(positions)
-  var center = aabb.center(result)
-  var size = aabb.size(result)
-  var scale = Math.max(size[0], Math.max(size[1], size[2]))
+function centerAndNormalize(positions) {
+  const isTypedArray = !Array.isArray(positions);
+  const stride = isTypedArray ? 3 : 1;
 
-  var newPositions = []
-  for (var i = 0; i < positions.length; i++) {
-    var p = vec3.copy(positions[i])
-    vec3.sub(p, center)
-    vec3.scale(p, 1 / scale)
-    newPositions.push(p)
+  const bbox = aabb.create();
+  aabb.fromPoints(bbox, positions);
+  const center = aabb.center(bbox);
+  const size = aabb.size(bbox);
+  const scale = 1 / Math.max(...size);
+
+  for (let i = 0; i < positions.length / stride; i++) {
+    if (isTypedArray) {
+      avec3.sub(positions, i, center, 0);
+      avec3.scale(positions, i, scale);
+    } else {
+      const p = vec3.copy(positions[i]);
+      vec3.sub(p, center);
+      vec3.scale(p, scale);
+      positions[i] = p;
+    }
   }
-  return newPositions
+
+  return positions;
 }
 
-module.exports = centerAndNormalize
+export default centerAndNormalize;
