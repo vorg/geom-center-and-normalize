@@ -31,11 +31,11 @@
     "test:watch": "node --test --watch test"
   },
   "dependencies": {
-    "pex-geom": "^3.0.0-alpha.3",
-    "pex-math": "^4.0.0-alpha.3"
+    "pex-geom": "^3.0.1",
+    "pex-math": "^4.1.0"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=20.0.0",
+    "npm": ">=9.6.4"
   }
 }
