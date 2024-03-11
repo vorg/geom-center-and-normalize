@@ -25,6 +25,7 @@
   "type": "module",
   "exports": "./index.js",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "release": "snowdev release",
     "test": "node --test",

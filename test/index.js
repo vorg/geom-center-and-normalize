@@ -90,3 +90,52 @@ test("should normalize positions uniformly", (t) => {
 
   assert.deepStrictEqual(centerAndNormalize(positions), normalizedPositions);
 });
+
+test("should only center positions", (t) => {
+  // prettier-ignore
+  const positions = new Float32Array([
+    0, 0, 0,
+    2, 0, 0,
+    2, 2, 0,
+    0, 2, 0,
+  ]);
+
+  // prettier-ignore
+  const normalizedPositions = new Float32Array([
+    -1, -1, 0,
+    1, -1, 0,
+    1, 1, 0,
+    -1, 1, 0,
+  ]);
+
+  assert.deepStrictEqual(
+    centerAndNormalize(positions, { normalize: false }),
+    normalizedPositions
+  );
+  assert.equal(centerAndNormalize(positions), positions);
+});
+test("should only normalize positions", (t) => {
+  // prettier-ignore
+  const positions = new Float32Array([
+    0, 0, 0,
+    10, 0, 0,
+    10, 10, 0,
+    0, 10, 0,
+    10, 10, 10,
+  ]);
+
+  // prettier-ignore
+  const normalizedPositions = new Float32Array([
+    4.5, 4.5, 4.5,
+    5.5, 4.5, 4.5,
+    5.5, 5.5, 4.5,
+    4.5, 5.5, 4.5,
+    5.5, 5.5, 5.5,
+  ]);
+
+  assert.deepStrictEqual(
+    centerAndNormalize(positions, { center: false }),
+    normalizedPositions
+  );
+  assert.equal(centerAndNormalize(positions), positions);
+});

@@ -31,11 +31,13 @@ const normalizedPositions = centerAndNormalize(positions);
 
 ## API
 
-#### `centerAndNormalize(positions): positions`
+#### `centerAndNormalize(positions, [options]): positions`
 
 **Parameters**
 
-- positions: `TypedArray|Array` – simplicial complex geometry positions (eg. `new Float32Array([x, y, z, x, y, z, ...])` or `new Array([x, y, z], [x, y, z], ...)`)
+- positions: `TypedArray|Array` – simplicial complex geometry positions (eg. `new Float32Array([x, y, z, x, y, z, ...])/new Array(x, y, z, x, y, z, ...) ` or `new Array([x, y, z], [x, y, z], ...)`)
+
+- options: `{ center: boolean, normalize: boolean }` – only center or normalize. Both defaults to `true`.
 
 **Returns**
 
