@@ -41,7 +41,7 @@ const normalizedPositions = centerAndNormalize(positions);
 
 **Returns**
 
-- positions: `TypedArray | Array | Array<[x, y, z]>` – The positions parameter array updated, centered at `[0, 0, 0]` and normalized to a unit bounding box `[-0.5, -0.5, -0.5] x [0.5, 0.5, 0.5]`.
+- positions: `TypedArray | Array | Array<[x, y, z]>` – The positions parameter array updated, centered at `[0, 0, 0]` and normalized to a bounding box of `scale` size (`[-halfScale, -halfScale, -halfScale] x [halfScale, halfScale, halfScale]`).
 
 ## License
 

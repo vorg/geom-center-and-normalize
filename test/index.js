@@ -182,3 +182,24 @@ test(`should center and normalize for scale 2 and return that array`, (t) => {
   );
   assert.equal(centerAndNormalize(positions, { scale: 2 }), positions);
 });
+
+test("should scale to 0", (t) => {
+  // prettier-ignore
+  const positions = new Float32Array([
+    1, 1, 1,
+    2, 2, 2,
+    3, 5, 3
+  ]);
+
+  // prettier-ignore
+  const normalizedPositions = new Float32Array([
+    0, 0, 0,
+    0, 0, 0,
+    0, 0, 0,
+  ]);
+
+  assert.deepEqual(
+    centerAndNormalize(positions, { scale: 0 }),
+    normalizedPositions,
+  );
+});
