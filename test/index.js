@@ -109,10 +109,10 @@ test("should only center positions", (t) => {
   ]);
 
   assert.deepStrictEqual(
-    centerAndNormalize(positions, { normalize: false }),
-    normalizedPositions
+    centerAndNormalize(positions, { scale: false }),
+    normalizedPositions,
   );
-  assert.equal(centerAndNormalize(positions), positions);
+  assert.equal(centerAndNormalize(positions, { scale: false }), positions);
 });
 test("should only normalize positions", (t) => {
   // prettier-ignore
@@ -135,7 +135,50 @@ test("should only normalize positions", (t) => {
 
   assert.deepStrictEqual(
     centerAndNormalize(positions, { center: false }),
-    normalizedPositions
+    normalizedPositions,
   );
-  assert.equal(centerAndNormalize(positions), positions);
+  assert.equal(centerAndNormalize(positions, { center: false }), positions);
+});
+
+test(`should center and normalize for scale "true" and return that array`, (t) => {
+  // prettier-ignore
+  const positions = new Float32Array([
+    1, 1, 1,
+    2, 2, 2,
+    3, 5, 3
+  ]);
+
+  // prettier-ignore
+  const normalizedPositions = new Float32Array([
+    -0.25, -0.5, -0.25,
+    0, -0.25, 0,
+    0.25, 0.5, 0.25,
+  ]);
+
+  assert.deepStrictEqual(
+    centerAndNormalize(positions, { scale: true }),
+    normalizedPositions,
+  );
+  assert.equal(centerAndNormalize(positions, { scale: true }), positions);
+});
+test(`should center and normalize for scale 2 and return that array`, (t) => {
+  // prettier-ignore
+  const positions = new Float32Array([
+    1, 1, 1,
+    2, 2, 2,
+    3, 5, 3
+  ]);
+
+  // prettier-ignore
+  const normalizedPositions = new Float32Array([
+    -0.25, -0.5, -0.25,
+    0, -0.25, 0,
+    0.25, 0.5, 0.25,
+  ]).map((n) => n * 2);
+
+  assert.deepStrictEqual(
+    centerAndNormalize(positions, { scale: 2 }),
+    normalizedPositions,
+  );
+  assert.equal(centerAndNormalize(positions, { scale: 2 }), positions);
 });
