@@ -1,6 +1,6 @@
 # geom-center-and-normalize
 
-Center a simplicial complex geometry's positions and scale them to fill 1x1x1 bounding box.
+Center a simplicial complex geometry's positions in place and scale them to fill a defined bounding box.
 
 ## Installation
 
