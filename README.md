@@ -1,6 +1,6 @@
 # geom-center-and-normalize
 
-Center a simplicial complex geometry's positions and scale them to fill 1x1x1 bounding box.
+Center a simplicial complex geometry's positions in place and scale them to fill a defined bounding box.
 
 ## Installation
 
@@ -31,15 +31,17 @@ const normalizedPositions = centerAndNormalize(positions);
 
 ## API
 
-#### `centerAndNormalize(positions): positions`
+#### `centerAndNormalize(positions, [options]): positions`
 
 **Parameters**
 
-- positions: `TypedArray|Array` – simplicial complex geometry positions (eg. `new Float32Array([x, y, z, x, y, z, ...])` or `new Array([x, y, z], [x, y, z], ...)`)
+- positions: `TypedArray | Array | Array<[x, y, z]>` – simplicial complex geometry positions (eg. `new Float32Array([x, y, z, x, y, z, ...])/new Array(x, y, z, x, y, z, ...)` or `new Array([x, y, z], [x, y, z], ...)`)
+
+- options: `{ center: boolean, normalize: boolean, scale: number }` – enable/disable centering/normalizing and control normalized scaling. `center` and `normalize` defaults to `true`. Scale defaults to `1`.
 
 **Returns**
 
-- positions: `TypedArray|Array` – The positions parameter array updated, centered at `[0, 0, 0]` and normalized to a unit bounding box `[-0.5, -0.5, -0.5] x [0.5, 0.5, 0.5]`.
+- positions: `TypedArray | Array | Array<[x, y, z]>` – The positions parameter array updated, centered at `[0, 0, 0]` and normalized to a bounding box of `scale` size (`[-halfScale, -halfScale, -halfScale] x [halfScale, halfScale, halfScale]`).
 
 ## License
 

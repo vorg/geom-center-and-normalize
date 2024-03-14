@@ -1,25 +1,38 @@
 import { avec3, vec3 } from "pex-math";
 import { aabb } from "pex-geom";
 
-function centerAndNormalize(positions) {
-  const isTypedArray = !Array.isArray(positions);
-  const stride = isTypedArray ? 3 : 1;
+const TEMP_VEC3 = vec3.create();
 
-  const bbox = aabb.create();
-  aabb.fromPoints(bbox, positions);
-  const center = aabb.center(bbox);
-  const size = aabb.size(bbox);
-  const scale = 1 / Math.max(...size);
+function centerAndNormalize(
+  positions,
+  { center = true, normalize = true, scale = 1 } = {},
+) {
+  const isFlatArray = !positions[0]?.length;
+  const positionsCount = positions.length / (isFlatArray ? 3 : 1);
 
-  for (let i = 0; i < positions.length / stride; i++) {
-    if (isTypedArray) {
-      avec3.sub(positions, i, center, 0);
-      avec3.scale(positions, i, scale);
+  const bbox = aabb.fromPoints(aabb.create(), positions);
+  const bboxCenter = aabb.center(bbox);
+
+  if (normalize) {
+    const size = aabb.size(bbox);
+    scale = scale / (Math.max(...size) || 1);
+  }
+
+  for (let i = 0; i < positionsCount; i++) {
+    if (isFlatArray) {
+      avec3.sub(positions, i, bboxCenter, 0);
+      if (normalize) {
+        avec3.scale(positions, i, scale);
+        if (!center) avec3.add(positions, i, bboxCenter, 0);
+      }
     } else {
-      const p = vec3.copy(positions[i]);
-      vec3.sub(p, center);
-      vec3.scale(p, scale);
-      positions[i] = p;
+      vec3.set(TEMP_VEC3, positions[i]);
+      vec3.sub(TEMP_VEC3, bboxCenter);
+      if (normalize) {
+        vec3.scale(TEMP_VEC3, scale);
+        if (!center) vec3.add(TEMP_VEC3, bboxCenter);
+      }
+      vec3.set(positions[i], TEMP_VEC3);
     }
   }
 
