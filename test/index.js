@@ -109,10 +109,10 @@ test("should only center positions", (t) => {
   ]);
 
   assert.deepStrictEqual(
-    centerAndNormalize(positions, { scale: false }),
+    centerAndNormalize(positions, { normalize: false }),
     normalizedPositions,
   );
-  assert.equal(centerAndNormalize(positions, { scale: false }), positions);
+  assert.equal(centerAndNormalize(positions, { normalize: false }), positions);
 });
 test("should only normalize positions", (t) => {
   // prettier-ignore

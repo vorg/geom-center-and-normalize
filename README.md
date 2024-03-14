@@ -37,7 +37,7 @@ const normalizedPositions = centerAndNormalize(positions);
 
 - positions: `TypedArray | Array | Array<[x, y, z]>` – simplicial complex geometry positions (eg. `new Float32Array([x, y, z, x, y, z, ...])/new Array(x, y, z, x, y, z, ...)` or `new Array([x, y, z], [x, y, z], ...)`)
 
-- options: `{ center: boolean, scale: number | boolean }` – enable/disable centering and enable/disable/control scaling. `center` defaults to `true`. Scale defaults to `1` and can be set to `false` to disable normalization.
+- options: `{ center: boolean, normalize: boolean, scale: number }` – enable/disable centering/normalizing and control normalized scaling. `center` and `normalize` defaults to `true`. Scale defaults to `1`.
 
 **Returns**
 

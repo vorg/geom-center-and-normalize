@@ -3,19 +3,19 @@ import { aabb } from "pex-geom";
 
 const TEMP_VEC3 = vec3.create();
 
-function centerAndNormalize(positions, { center = true, scale = 1 } = {}) {
-  scale = scale === true ? 1 : scale;
-
+function centerAndNormalize(
+  positions,
+  { center = true, normalize = true, scale = 1 } = {},
+) {
   const isFlatArray = !positions[0]?.length;
   const positionsCount = positions.length / (isFlatArray ? 3 : 1);
 
   const bbox = aabb.fromPoints(aabb.create(), positions);
   const bboxCenter = aabb.center(bbox);
 
-  const normalize = Number.isFinite(scale);
   if (normalize) {
     const size = aabb.size(bbox);
-    scale /= Math.max(...size);
+    scale = scale / Math.max(...size);
   }
 
   for (let i = 0; i < positionsCount; i++) {
