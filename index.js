@@ -15,7 +15,7 @@ function centerAndNormalize(
 
   if (normalize) {
     const size = aabb.size(bbox);
-    scale = scale / Math.max(...size);
+    scale = scale / (Math.max(...size) || 1);
   }
 
   for (let i = 0; i < positionsCount; i++) {

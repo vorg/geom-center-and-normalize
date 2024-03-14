@@ -203,3 +203,20 @@ test("should scale to 0", (t) => {
     normalizedPositions,
   );
 });
+test("should handle array of zero positions", (t) => {
+  // prettier-ignore
+  const positions = new Float32Array([
+    0, 0, 0,
+    0, 0, 0,
+    0, 0, 0,
+  ]);
+
+  // prettier-ignore
+  const normalizedPositions = new Float32Array([
+    0, 0, 0,
+    0, 0, 0,
+    0, 0, 0,
+  ]);
+
+  assert.deepEqual(centerAndNormalize(positions), normalizedPositions);
+});
