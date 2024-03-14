@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://github.com/vorg/geom-center-and-normalize/compare/v2.1.0...v2.1.1) (2024-03-14)
+
+
+
 # [2.1.0](https://github.com/vorg/geom-center-and-normalize/compare/v2.0.0...v2.1.0) (2024-03-14)
 
 
