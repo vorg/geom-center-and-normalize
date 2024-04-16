@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [2.2.0](https://github.com/vorg/geom-center-and-normalize/compare/v2.1.1...v2.2.0) (2024-04-16)
+
+
+### Features
+
+* rename scale to normalizedSize ([8007608](https://github.com/vorg/geom-center-and-normalize/commit/800760830ee69d2a882d74447ce97e56ead7e857))
+
+
+
 ## [2.1.1](https://github.com/vorg/geom-center-and-normalize/compare/v2.1.0...v2.1.1) (2024-03-14)
 
 
