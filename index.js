@@ -23,15 +23,15 @@ function centerAndNormalize(
       avec3.sub(positions, i, bboxCenter, 0);
       if (normalize) {
         avec3.scale(positions, i, normalizedSize);
-        if (!center) avec3.add(positions, i, bboxCenter, 0);
       }
+      if (!center) avec3.add(positions, i, bboxCenter, 0);
     } else {
       vec3.set(TEMP_VEC3, positions[i]);
       vec3.sub(TEMP_VEC3, bboxCenter);
       if (normalize) {
         vec3.scale(TEMP_VEC3, normalizedSize);
-        if (!center) vec3.add(TEMP_VEC3, bboxCenter);
       }
+      if (!center) vec3.add(TEMP_VEC3, bboxCenter);
       vec3.set(positions[i], TEMP_VEC3);
     }
   }
