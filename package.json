@@ -1,6 +1,6 @@
 {
   "name": "geom-center-and-normalize",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Center a simplicial complex geometry's positions in place and scale them to fill a defined bounding box.",
   "keywords": [
     "geom",
@@ -15,7 +15,10 @@
   ],
   "homepage": "https://github.com/vorg/geom-center-and-normalize",
   "bugs": "https://github.com/vorg/geom-center-and-normalize/issues",
-  "repository": "vorg/geom-center-and-normalize",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vorg/geom-center-and-normalize.git"
+  },
   "license": "MIT",
   "author": "Marcin Ignac <marcin.ignac@gmail.com> (https://github.com/vorg)",
   "contributors": [

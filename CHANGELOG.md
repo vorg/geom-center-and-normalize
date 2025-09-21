@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.1](https://github.com/vorg/geom-center-and-normalize/compare/v2.2.0...v2.2.1) (2025-09-21)
+
+
+### Bug Fixes
+
+* apply centering regardles of normalization ([b0d14a4](https://github.com/vorg/geom-center-and-normalize/commit/b0d14a464da927ec4a320b52ad03e55fb7d9d705)), closes [#11](https://github.com/vorg/geom-center-and-normalize/issues/11)
+
+
+
 # [2.2.0](https://github.com/vorg/geom-center-and-normalize/compare/v2.1.1...v2.2.0) (2024-04-16)
 
 
