@@ -37,11 +37,15 @@ const normalizedPositions = centerAndNormalize(positions);
 
 - positions: `TypedArray | Array | Array<[x, y, z]>` – simplicial complex geometry positions (eg. `new Float32Array([x, y, z, x, y, z, ...])/new Array(x, y, z, x, y, z, ...)` or `new Array([x, y, z], [x, y, z], ...)`)
 
-- options: `{ center: boolean, normalize: boolean, normalizedSize: number }` – enable/disable centering/normalizing and control normalized scaling. `center` and `normalize` defaults to `true`. Scale defaults to `1`.
+- options: `object`
+  - `center: boolean` – move the bounding box center to `[0, 0, 0]`. Defaults to `true`.
+  - `normalize: boolean` – scale positions uniformly so that the bounding box largest side is `normalizedSize`. Defaults to `true`.
+  - `normalizedSize: number` – size of the bounding box largest side when normalizing. Defaults to `1`.
+  - `align: [x, y, z]` – per axis position on the bounding box, from `-1` (min) through `0` (center) to `1` (max), placed at the anchor: `[0, 0, 0]` when centering, the original bounding box center otherwise. Eg. `[0, -1, 0]` aligns the bounding box min y to the anchor. Defaults to `[0, 0, 0]`.
 
 **Returns**
 
-- positions: `TypedArray | Array | Array<[x, y, z]>` – The positions parameter array updated, centered at `[0, 0, 0]` and normalized to a bounding box of `normalizedSize` (`[-halfScale, -halfScale, -halfScale] x [halfScale, halfScale, halfScale]`).
+- positions: `TypedArray | Array | Array<[x, y, z]>` – The positions parameter array updated in place, by default centered at `[0, 0, 0]` with its bounding box largest side normalized to `normalizedSize`.
 
 ## License
 
