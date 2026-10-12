@@ -24,7 +24,7 @@ function centerAndNormalize(
   const scale = normalize ? normalizedSize / (Math.max(...size) || 1) : 1;
 
   const translation = bboxCenter.map(
-    (c, i) => (center ? 0 : c) + (align[i] * size[i] * scale) / 2,
+    (c, i) => (center ? 0 : c) - (align[i] * size[i] * scale) / 2,
   );
   const translate = translation.some(Boolean);
 

@@ -216,7 +216,7 @@ test("should align positions on each axis", (t) => {
   ]);
 
   assert.deepStrictEqual(
-    centerAndNormalize(positions, { align: [1, 0, -1] }),
+    centerAndNormalize(positions, { align: [-1, 0, 1] }),
     normalizedPositions,
   );
 });
@@ -238,7 +238,7 @@ test("should align positions relative to their bbox center when not centering", 
     centerAndNormalize(positions, {
       center: false,
       normalize: false,
-      align: [-1, 1, 0],
+      align: [1, -1, 0],
     }),
     normalizedPositions,
   );
@@ -258,7 +258,7 @@ test("should align positions with their normalized size", (t) => {
   ]);
 
   assert.deepStrictEqual(
-    centerAndNormalize(positions, { normalizedSize: 2, align: [1, -1, 0] }),
+    centerAndNormalize(positions, { normalizedSize: 2, align: [-1, 1, 0] }),
     normalizedPositions,
   );
 });
@@ -305,7 +305,7 @@ test("should align an array of position arrays", (t) => {
   ];
 
   assert.deepStrictEqual(
-    centerAndNormalize(positions, { normalizedSize: 2, align: [1, -1, 0] }),
+    centerAndNormalize(positions, { normalizedSize: 2, align: [-1, 1, 0] }),
     normalizedPositions,
   );
 });

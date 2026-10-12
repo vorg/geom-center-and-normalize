@@ -41,7 +41,7 @@ const normalizedPositions = centerAndNormalize(positions);
   - `center: boolean` – move the bounding box center to `[0, 0, 0]`. Defaults to `true`.
   - `normalize: boolean` – scale positions uniformly so that the bounding box largest side is `normalizedSize`. Defaults to `true`.
   - `normalizedSize: number` – size of the bounding box largest side when normalizing. Defaults to `1`.
-  - `align: [x, y, z]` – per axis `-1`, `0` or `1` to put the bounding box max (`-1`) or min (`1`) at its center (`[0, 0, 0]` when centering), eg. `[0, 1, 0]` to sit a geometry on the floor. Defaults to `[0, 0, 0]`.
+  - `align: [x, y, z]` – per axis position on the bounding box, from `-1` (min) through `0` (center) to `1` (max), placed at the anchor: `[0, 0, 0]` when centering, the original bounding box center otherwise. Eg. `[0, -1, 0]` aligns the bounding box min y to the anchor. Defaults to `[0, 0, 0]`.
 
 **Returns**
 
