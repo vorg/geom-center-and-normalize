@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [2.3.0](https://github.com/vorg/geom-center-and-normalize/compare/v2.2.1...v2.3.0) (2026-10-12)
+
+### Bug Fixes
+
+* flip align sign so -1 aligns the bounding box min ([907727b](https://github.com/vorg/geom-center-and-normalize/commit/907727bf2c084058e251cb45d270aac497889a5c))
+
+### Features
+
+* add align option ([d0596b5](https://github.com/vorg/geom-center-and-normalize/commit/d0596b5a71b3a49c726ea382ffc8427eeb106149))
+
 ## [2.2.1](https://github.com/vorg/geom-center-and-normalize/compare/v2.2.0...v2.2.1) (2025-09-21)
 
 
